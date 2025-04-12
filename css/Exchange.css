@@ -64,7 +64,7 @@ body {
 }
 
 /* Main Content Styles */
-.payment-container {
+.exchange-container {
     max-width: 1200px;
     margin: 100px auto 0;
     padding: 2rem;
@@ -89,108 +89,176 @@ body {
     opacity: 0.9;
 }
 
-/* Payment-specific styles */
-.payment-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
+/* Exchange Form Styles */
+.exchange-wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
 }
 
-.payment-header {
+.exchange-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.payment-header h2 {
+.exchange-header h2 {
     color: #007bff;
     margin-bottom: 0.5rem;
 }
 
-.security-info {
+.rate-info {
     color: #666;
 }
 
-.payment-form {
+.exchange-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.form-row {
+.amount-section {
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.amount-section label {
+    font-weight: 500;
+}
+
+.amount-section input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.currency-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 1rem;
 }
 
-.form-row .form-group {
+.from-currency, .to-currency {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.amount-display {
+.select-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.currency-flag {
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+}
+
+select {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.exchange-icon {
+    padding: 1rem;
+}
+
+.exchange-arrow {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.exchange-arrow:hover {
+    transform: rotate(180deg);
+}
+
+.exchange-rate {
     text-align: center;
     padding: 1rem;
     background: #f8f9fa;
     border-radius: 5px;
-    font-size: 1.2rem;
 }
 
-.amount-display span {
-    font-weight: bold;
-    color: #007bff;
-}
-
-.payment-options {
+.button-group {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
 }
 
-.payment-method {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.terms-agreement {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 1rem 0;
+.btn-primary {
+    background: #007bff;
+    color: white;
 }
 
-.terms-agreement a {
-    color: #007bff;
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary a {
+    color: white;
     text-decoration: none;
 }
 
-.terms-agreement a:hover {
-    text-decoration: underline;
+.btn-secondary:hover {
+    background: #5a6268;
 }
 
-.payment-result {
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Security Section Styles */
-.security-section {
+/* Info Section Styles */
+.info-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
 
-.security-card {
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.security-card img {
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card img {
     width: 80px;
     height: 80px;
     margin-bottom: 1rem;
 }
 
-.security-card h3 {
+.info-card h3 {
     color: #007bff;
     margin-bottom: 1rem;
 }
@@ -256,21 +324,20 @@ body {
         gap: 1rem;
     }
 
-    .form-row {
+    .currency-section {
         flex-direction: column;
     }
 
-    .payment-options {
-        flex-direction: column;
-        align-items: flex-start;
+    .exchange-icon {
+        transform: rotate(90deg);
     }
 
     .button-group {
         flex-direction: column;
     }
 
-    .payment-container {
+    .exchange-container {
         padding: 1rem;
         margin-top: 150px;
     }
-}
+} 

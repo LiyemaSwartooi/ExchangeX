@@ -2,31 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/styled.css"/>
-    <title>ExchangeX</title>
+    <meta name="description" content="ExchangeX - Your trusted currency exchange platform">
+    <title>ExchangeX - Currency Exchange Made Simple</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="icon" href="../assets/logos/Uzuu.png" type="image/png">
 </head>
 <body>
-    <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSikBacy00FJZZNh5Q_J7Qd5tPm_3WaBxNUsEcGAn7qDxlQ7BLFQHNZs4GBw3vQhC8QYfg&usqp=CAU">
-    </div>
-    <nav> 
-        
-        <ul>
-            <li><a  href = "MainPage.html">Home</a></li>
-            <li><a href = "index.html">About</a></li>
-            <li><a href = "Exchange.html">Exchange</a></li>
-            <li><a href = "Conveter.html">Buy&Sell</a></li>
-            <li><a href = "Support.html">Support&FQAs</a></li>
-        </ul>
-    </nav>
-     <img class="l1" src="../assets/illustrations/Green Illustration Animated Customer Service Facebook Post (2).png" alt="Home page image">
+    <!-- Include Navigation -->
+    <div id="navbar-placeholder"></div>
 
+    <!-- Include SVG Icons -->
+    <div id="svg-icons-placeholder"></div>
 
-<br>
-     <button><em><a style="color: black;" href="Register.html">SIGN UP</a></em></button>
+    <main class="main-container">
+        <section class="hero-section">
+            <h1>Welcome to ExchangeX</h1>
+            <p class="subtitle">Your trusted partner for currency exchange</p>
+        </section>
+
+        <section class="features-section">
+            <div class="feature-card card">
+                <svg class="icon">
+                    <use xlink:href="#icon-fast"></use>
+                </svg>
+                <h3>Fast Exchange</h3>
+                <p>Get your currency exchanged in minutes with our efficient service</p>
+            </div>
+            <div class="feature-card card">
+                <svg class="icon">
+                    <use xlink:href="#icon-rates"></use>
+                </svg>
+                <h3>Best Rates</h3>
+                <p>We offer competitive exchange rates with no hidden fees</p>
+            </div>
+            <div class="feature-card card">
+                <svg class="icon">
+                    <use xlink:href="#icon-secure"></use>
+                </svg>
+                <h3>Secure</h3>
+                <p>Your transactions are protected with bank-level security</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Exchange?</h2>
+            <p>Start your currency exchange journey with ExchangeX today</p>
+            <div class="button-group">
+                <a href="Exchange.html" class="btn-primary">Exchange Now</a>
+                <a href="Conveter.html" class="btn-secondary">Buy & Sell</a>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card card">
+                    <p>"ExchangeX made my currency exchange experience smooth and hassle-free!"</p>
+                    <div class="testimonial-author">
+                        <svg class="icon">
+                            <use xlink:href="#icon-customer"></use>
+                        </svg>
+                        <span>John Doe</span>
+                    </div>
+                </div>
+                <div class="testimonial-card card">
+                    <p>"The best rates I've found, and the service is excellent!"</p>
+                    <div class="testimonial-author">
+                        <svg class="icon">
+                            <use xlink:href="#icon-customer"></use>
+                        </svg>
+                        <span>Jane Smith</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ExchangeX</h3>
+                <p>Making currency exchange simple and secure.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="MainPage.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="Exchange.html">Exchange</a></li>
+                    <li><a href="Conveter.html">Buy & Sell</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@exchangex.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ExchangeX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load navigation
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Set active link
+                const currentPage = window.location.pathname.split('/').pop();
+                document.querySelector(`.nav-links a[href="${currentPage}"]`).classList.add('active');
+            });
+
+        // Load SVG icons
+        fetch('../components/icons.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('svg-icons-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
 

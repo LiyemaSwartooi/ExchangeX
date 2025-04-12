@@ -1,72 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel = "stylesheet" href = "../css/Excahnge.css">
-    <title>Currency Exchange</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ExchangeX - Fast and secure currency exchange">
+    <title>Currency Exchange | ExchangeX</title>
+    <link rel="stylesheet" href="../css/Exchange.css">
+    <link rel="icon" href="../assets/logos/travelex.jpg" type="image/jpg">
 </head>
 <body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="logo-container">
+                <img src="../assets/logos/travelex.jpg" alt="ExchangeX Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="MainPage.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="Exchange.html" class="active">Exchange</a></li>
+                <li><a href="Conveter.html">Buy & Sell</a></li>
+                <li><a href="Support.html">Support & FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
 
-   
-    <nav> 
-        <ul>
-            <img src="../assets/logos/travelex.jpg" alt ="ExchangeX" width = "55" height = "55">
-            <li><a  href = "MainPage.html">Home</a></li>
-            <li><a href = "index.html">About</a></li>
-            <li><a href = "Exchange.html">Exchange</a></li>
-            <li><a href = "Conveter.html">Buy&Sell</a></li>
-            <li><a href = "Support.html">Support&FQAs </a></li>
-        </ul>
-    </nav>
-<h1>P2P</h1>
-  <!--  <button type ="button" onclick="document.getElementById('demo').innerText = Date()">Click me to see the date and time</button>
-    <p id = "demo">HI</p> -->
-	
-<center>
-<div class="wrapper">
-    <Header>Currency Converter</Header>
-    <form action="#">
-        <div class="amount">
-            <p>Enter Amount</p>
-            <input type="text" value="1">
-        </div>
-        <div class="drop-list">
-            <div class="From">
-                <P>From</P>
-                <div class="select-box">
-                    <img src="https://flagcdn.com/w20/za.jpg" alt="flag">
-                    <select ></select>
-                </div>
+    <main class="exchange-container">
+        <section class="hero-section">
+            <h1>Currency Exchange</h1>
+            <p class="subtitle">Fast, secure, and competitive rates</p>
+        </section>
+
+        <div class="exchange-wrapper">
+            <div class="exchange-header">
+                <h2>Currency Converter</h2>
+                <p class="rate-info">Real-time exchange rates</p>
             </div>
-            <div class="ExchangeArrow">
-                <img src="../assets/illustrations/ExchangeArrow.PNG" alt="Exchange"width = "45" height = "25">
-            </div>
-            <div class="To">
-                <P>To</P>
-                <div class="select-box">
-                    <img src="https://flagcdn.com/w20/us.jpg" alt="flag">
-                    <select ></select>
+            
+            <form action="#" class="exchange-form">
+                <div class="amount-section">
+                    <label for="amount">Enter Amount</label>
+                    <input type="number" id="amount" value="1" min="1" step="0.01">
                 </div>
-            </div>     
+
+                <div class="currency-section">
+                    <div class="from-currency">
+                        <label for="from-currency">From</label>
+                        <div class="select-box">
+                            <img src="https://flagcdn.com/w20/za.jpg" alt="flag" class="currency-flag">
+                            <select id="from-currency"></select>
+                        </div>
+                    </div>
+
+                    <div class="exchange-icon">
+                        <img src="../assets/illustrations/ExchangeArrow.PNG" alt="Exchange" class="exchange-arrow">
+                    </div>
+
+                    <div class="to-currency">
+                        <label for="to-currency">To</label>
+                        <div class="select-box">
+                            <img src="https://flagcdn.com/w20/us.jpg" alt="flag" class="currency-flag">
+                            <select id="to-currency"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exchange-rate">
+                    <p>Getting exchange rate...</p>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-primary" id="get-rate">Get Exchange Rate</button>
+                    <button type="button" class="btn-secondary">
+                        <a href="Payment.html">Proceed to Payment</a>
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="exchange-rate">Getting exchange rate... </div>
-        <button>Get Exchange Rate</button>
-        <p>   </p>
-        <!-- I added the empty paragraph to create space between the buttons -->
-        <button><a href = "Payment.html" style="color: black;">Transact</a></button>
-    </form>
-</div>
-</center>
-<!--<footer>
-    Copyright 2023
-</footer>-->
+
+        <section class="info-section">
+            <div class="info-card">
+                <img src="../assets/illustrations/Money-Transfer-12.png" alt="Secure Transfer">
+                <h3>Secure Transactions</h3>
+                <p>Your transactions are protected with bank-level security</p>
+            </div>
+            <div class="info-card">
+                <img src="../assets/illustrations/Money-Transfer-113.png" alt="Fast Transfer">
+                <h3>Fast Processing</h3>
+                <p>Complete your exchange in minutes</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ExchangeX</h3>
+                <p>Making currency exchange simple and secure.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="MainPage.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="Exchange.html">Exchange</a></li>
+                    <li><a href="Conveter.html">Buy & Sell</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@exchangex.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ExchangeX. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="../js/Country-List.js"></script>
     <script src="../js/Exchange.js"></script>
-    <section>
-        <img class="P1" src="../assets/illustrations/Money-Transfer-12.png">
-    </section>
-    <section>
-        <img class="P3" src="../assets/illustrations/Money-Transfer-113.png">
-    </section>
 </body>
 </html>

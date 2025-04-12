@@ -1,54 +1,137 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Payment Section</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ExchangeX - Secure payment processing">
+    <title>Payment Processing | ExchangeX</title>
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/Payment.css">
-  </head>
-  <body>
-    <h1>Payment Section</h1>
-    <nav> 
-      <ul>
-          <li><a  href = "MainPage.html">Home</a></li>
-          <li><a href = "index.html">About</a></li>
-          <li><a href = "Exchange.html">Exchange</a></li>
-          <li><a href = "Conveter.html">Buy&Sell</a></li>
-          <li><a href = "Support.html">Support&FQAs</a></li>
-      </ul>
-  </nav>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
+    <link rel="icon" href="../assets/logos/Uzuu.png" type="image/png">
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="navbar-placeholder"></div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
+    <main class="main-container">
+        <section class="hero-section">
+            <h1>Secure Payment</h1>
+            <p class="subtitle">Complete your transaction safely</p>
+        </section>
 
-      <label for="cardNumber">Card Number:</label>
-      <input type="text" id="cardNumber" name="cardNumber" required><br>
+        <div class="payment-wrapper card">
+            <div class="payment-header">
+                <h2>Payment Details</h2>
+                <p class="security-info">Your payment is protected with bank-level security</p>
+            </div>
 
-      <label for="expDate">Expiration Date:</label>
-      <input type="text" id="expDate" name="expDate" required><br>
+            <form class="payment-form" id="paymentForm">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
 
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" name="cvv" required><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
 
-      <button type="button" onclick="processPayment()"><a href = "MainPage.html">Pay Now</a></button>
-    </form>
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" placeholder="John Doe" required>
+                </div>
 
-    <div id="paymentResult"></div>
-    <section>
-      <img src="../assets/illustrations/istockphoto-1279104465-612x612-removebg-preview.png">
-    </section>
-    <section>
-      <img class="u" src="../assets/illustrations/6607631.liy-removebg-preview.png">
-    </section>
-     <h1>ExchangeX...<br><marquee>The journey to simplicity<br> starts with us &#128516</h1></marquee>
-     <div>
-      <img class="e" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSikBacy00FJZZNh5Q_J7Qd5tPm_3WaBxNUsEcGAn7qDxlQ7BLFQHNZs4GBw3vQhC8QYfg&usqp=CAU">
-    </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+
+                <div class="amount-display">
+                    <p>Amount to Pay: <span id="amountToPay">$0.00</span></p>
+                </div>
+
+                <div class="payment-options">
+                    <div class="payment-method">
+                        <input type="radio" id="creditCard" name="paymentMethod" value="credit" checked>
+                        <label for="creditCard">Credit Card</label>
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="debitCard" name="paymentMethod" value="debit">
+                        <label for="debitCard">Debit Card</label>
+                    </div>
+                </div>
+
+                <div class="terms-agreement">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Process Payment</button>
+                    <button type="button" class="btn-secondary" onclick="window.location.href='Exchange.html'">Cancel</button>
+                </div>
+            </form>
+
+            <div id="paymentResult" class="payment-result"></div>
+        </div>
+
+        <section class="security-section">
+            <div class="security-card card">
+                <img src="../assets/illustrations/istockphoto-1279104465-612x612-removebg-preview.png" alt="Secure Payment">
+                <h3>Secure Payment Processing</h3>
+                <p>Your payment information is encrypted and protected</p>
+            </div>
+            <div class="security-card card">
+                <img src="../assets/illustrations/6607631.liy-removebg-preview.png" alt="Instant Processing">
+                <h3>Instant Processing</h3>
+                <p>Your transaction is processed immediately</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ExchangeX</h3>
+                <p>Making currency exchange simple and secure.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="MainPage.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="Exchange.html">Exchange</a></li>
+                    <li><a href="Conveter.html">Buy & Sell</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@exchangex.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ExchangeX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/Payment.js"></script>
     <script>
-      function processPayment() {
-      alert("Your payment is successful");
-}
+        // Load navigation
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Set active link
+                const currentPage = window.location.pathname.split('/').pop();
+                document.querySelector(`.nav-links a[href="${currentPage}"]`).classList.add('active');
+            });
     </script>
-  </body>
+</body>
 </html>
